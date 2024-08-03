@@ -1,4 +1,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -28,7 +31,8 @@ require("lazy").setup({
     "folke/neodev.nvim",
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 } ,
     {'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end},
-    {'nvim-lualine/lualine.nvim',dependencies = { 'nvim-tree/nvim-web-devicons' }
+    {'nvim-lualine/lualine.nvim',dependencies = { 'nvim-tree/nvim-web-devicons' },
+    {"nvim-tree/nvim-tree.lua",version = "*",lazy = false,dependencies = {"nvim-tree/nvim-web-devicons",},config = function()require("nvim-tree").setup {}end,}
 }
 })
 
@@ -171,3 +175,4 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+require("nvim-tree").setup()
