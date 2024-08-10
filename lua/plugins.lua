@@ -95,6 +95,16 @@ require'lspconfig'.pylsp.setup{
   }
 }
 
+
+local cmp = require('cmp')
+
+cmp.setup({
+
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
+     }),
+})
+
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
  -- you can specify color or cterm_color instead of specifying both of them
