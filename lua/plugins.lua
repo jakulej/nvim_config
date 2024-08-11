@@ -32,8 +32,8 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 } ,
     {'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end},
     {'nvim-lualine/lualine.nvim',dependencies = { 'nvim-tree/nvim-web-devicons' },
-    {"nvim-tree/nvim-tree.lua",version = "*",lazy = false,dependencies = {"nvim-tree/nvim-web-devicons",},config = function()require("nvim-tree").setup {}end,}
-}
+        {"nvim-tree/nvim-tree.lua",version = "*",lazy = false,dependencies = {"nvim-tree/nvim-web-devicons",},config = function()require("nvim-tree").setup {}end,}
+    }
 })
 
 vim.cmd.colorscheme "catppuccin"
