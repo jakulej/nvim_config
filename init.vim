@@ -72,10 +72,15 @@ tnoremap <C-h> <C-\><C-n>
 cnoremap <C-h> <Esc>
 
 " Jumping to the start/end of the line
-nnoremap <leader>a g_
+noremap <leader>a g_
 nnoremap <leader>i _
 vnoremap <leader>a g_
 vnoremap <leader>i _
 
 lua require('plugins')
 
+" Telescope default 
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

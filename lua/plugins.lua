@@ -33,7 +33,9 @@ require("lazy").setup({
     {'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end},
     {'nvim-lualine/lualine.nvim',dependencies = { 'nvim-tree/nvim-web-devicons' },
         {"nvim-tree/nvim-tree.lua",version = "*",lazy = false,dependencies = {"nvim-tree/nvim-web-devicons",},config = function()require("nvim-tree").setup {}end,}
-    }
+    },
+    {'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
 })
 
 vim.cmd.colorscheme "catppuccin"
@@ -198,3 +200,8 @@ require('lualine').setup {
   extensions = {}
 }
 require("nvim-tree").setup()
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
