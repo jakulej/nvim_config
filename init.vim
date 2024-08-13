@@ -77,7 +77,7 @@ nnoremap <leader>i _
 vnoremap <leader>a g_
 vnoremap <leader>i _
 
-lua require('plugins')
+lua require('config')
 
 " Telescope default 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
